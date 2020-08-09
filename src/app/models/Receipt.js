@@ -7,12 +7,15 @@ class Receipt extends Model {
         path: Sequelize.STRING,
         valor: Sequelize.INTEGER,
         data_de_pagamento: Sequelize.DATE,
-        id_usuario: Sequelize.INTEGER,
       },
       {
         sequelize,
       }
     );
+  }
+
+  static associar(models) {
+    this.belongsTo(models.User, { foreignKey: 'id_usuario' });
   }
 }
 
