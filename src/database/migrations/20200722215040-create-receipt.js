@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('receipt', {
+    return queryInterface.createTable('receipts', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -8,6 +8,10 @@ module.exports = {
         primaryKey: true,
       },
       path: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      original_name: {
         type: Sequelize.STRING,
         allowNull: false,
       },

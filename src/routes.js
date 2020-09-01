@@ -25,4 +25,8 @@ router.delete('/user', UserController.delete);
 
 // ROTAS PARA O UPLOAD DE COMPROVANTES
 router.post('/receipt', upload.single('file'), ReceiptController.store);
+
+router.delete('/receipt', ReceiptController.delete);
+router.get('/receipt', ReceiptController.index);
+
 export default router;

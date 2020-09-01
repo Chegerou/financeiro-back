@@ -5,17 +5,16 @@ class Receipt extends Model {
     super.init(
       {
         path: Sequelize.STRING,
+        original_name: Sequelize.STRING,
         valor: Sequelize.INTEGER,
         data_de_pagamento: Sequelize.DATE,
+        id_usuario: Sequelize.INTEGER,
       },
       {
         sequelize,
       }
     );
-  }
-
-  static associar(models) {
-    this.belongsTo(models.User, { foreignKey: 'id_usuario' });
+    return this;
   }
 }
 
